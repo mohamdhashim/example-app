@@ -19,7 +19,8 @@ class AddressFactory extends Factory
         return [
             "street"=> $this->faker->streetName(),
             "apartment"=> rand(1,50),
-            "building"=> rand(1,200),
+            "floor"=> rand(1,40),
+            "building"=> $this->faker->buildingNumber(),
             'area_id'=> rand(1,20),
             'user_id'=> rand(1,20),
         ];

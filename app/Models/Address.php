@@ -12,7 +12,7 @@ class Address extends Model
 
     protected $primarykey = 'id';
     
-    protected $fillable = ['street','building','apartment','area_id','user_id'];
+    protected $fillable = ['floor','street','building','apartment','area_id','user_id'];
     
     public function area()
     {
