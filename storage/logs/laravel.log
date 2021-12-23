@@ -56,7 +56,7 @@ Did you mean one of these?
 #3 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run()
 #4 /var/www/html/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle()
 #5 {main}
-"} 
+"}
 [2021-12-23 11:24:40] local.ERROR: SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'areas' already exists (SQL: create table `areas` (`id` bigint unsigned not null auto_increment primary key, `created_at` timestamp null, `updated_at` timestamp null) default character set utf8mb4 collate 'utf8mb4_unicode_ci') {"exception":"[object] (Illuminate\\Database\\QueryException(code: 42S01): SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'areas' already exists (SQL: create table `areas` (`id` bigint unsigned not null auto_increment primary key, `created_at` timestamp null, `updated_at` timestamp null) default character set utf8mb4 collate 'utf8mb4_unicode_ci') at /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php:703)
 [stacktrace]
 #0 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php(663): Illuminate\\Database\\Connection->runQueryCallback()
@@ -124,7 +124,7 @@ Did you mean one of these?
 #29 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run()
 #30 /var/www/html/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle()
 #31 {main}
-"} 
+"}
 [2021-12-23 11:25:06] local.ERROR: Command "migrate:rolback" is not defined.
 
 Did you mean one of these?
@@ -151,7 +151,7 @@ Did you mean one of these?
 #3 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run()
 #4 /var/www/html/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle()
 #5 {main}
-"} 
+"}
 [2021-12-23 11:25:20] local.ERROR: SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'areas' already exists (SQL: create table `areas` (`id` bigint unsigned not null auto_increment primary key, `created_at` timestamp null, `updated_at` timestamp null) default character set utf8mb4 collate 'utf8mb4_unicode_ci') {"exception":"[object] (Illuminate\\Database\\QueryException(code: 42S01): SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'areas' already exists (SQL: create table `areas` (`id` bigint unsigned not null auto_increment primary key, `created_at` timestamp null, `updated_at` timestamp null) default character set utf8mb4 collate 'utf8mb4_unicode_ci') at /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php:703)
 [stacktrace]
 #0 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php(663): Illuminate\\Database\\Connection->runQueryCallback()
@@ -219,7 +219,7 @@ Did you mean one of these?
 #29 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run()
 #30 /var/www/html/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle()
 #31 {main}
-"} 
+"}
 [2021-12-23 11:25:39] local.ERROR: SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'areas' already exists (SQL: create table `areas` (`id` bigint unsigned not null auto_increment primary key, `created_at` timestamp null, `updated_at` timestamp null) default character set utf8mb4 collate 'utf8mb4_unicode_ci') {"exception":"[object] (Illuminate\\Database\\QueryException(code: 42S01): SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'areas' already exists (SQL: create table `areas` (`id` bigint unsigned not null auto_increment primary key, `created_at` timestamp null, `updated_at` timestamp null) default character set utf8mb4 collate 'utf8mb4_unicode_ci') at /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php:703)
 [stacktrace]
 #0 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php(663): Illuminate\\Database\\Connection->runQueryCallback()
@@ -287,7 +287,7 @@ Did you mean one of these?
 #29 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run()
 #30 /var/www/html/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle()
 #31 {main}
-"} 
+"}
 [2021-12-23 11:30:21] local.ERROR: SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'states' already exists (SQL: create table `states` (`id` bigint unsigned not null auto_increment primary key, `name` varchar(255) not null, `created_at` timestamp null, `updated_at` timestamp null) default character set utf8mb4 collate 'utf8mb4_unicode_ci') {"exception":"[object] (Illuminate\\Database\\QueryException(code: 42S01): SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'states' already exists (SQL: create table `states` (`id` bigint unsigned not null auto_increment primary key, `name` varchar(255) not null, `created_at` timestamp null, `updated_at` timestamp null) default character set utf8mb4 collate 'utf8mb4_unicode_ci') at /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php:703)
 [stacktrace]
 #0 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php(663): Illuminate\\Database\\Connection->runQueryCallback()
@@ -355,7 +355,7 @@ Did you mean one of these?
 #29 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run()
 #30 /var/www/html/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle()
 #31 {main}
-"} 
+"}
 [2021-12-23 11:30:29] local.ERROR: SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'states' already exists (SQL: create table `states` (`id` bigint unsigned not null auto_increment primary key, `name` varchar(255) not null, `created_at` timestamp null, `updated_at` timestamp null) default character set utf8mb4 collate 'utf8mb4_unicode_ci') {"exception":"[object] (Illuminate\\Database\\QueryException(code: 42S01): SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'states' already exists (SQL: create table `states` (`id` bigint unsigned not null auto_increment primary key, `name` varchar(255) not null, `created_at` timestamp null, `updated_at` timestamp null) default character set utf8mb4 collate 'utf8mb4_unicode_ci') at /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php:703)
 [stacktrace]
 #0 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php(663): Illuminate\\Database\\Connection->runQueryCallback()
@@ -423,4 +423,4 @@ Did you mean one of these?
 #29 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run()
 #30 /var/www/html/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle()
 #31 {main}
-"} 
+"}
