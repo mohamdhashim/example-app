@@ -1,0 +1,426 @@
+[2021-12-23 11:23:21] local.ERROR: Command "make:migrations" is not defined.
+
+Did you mean one of these?
+    make:cast
+    make:channel
+    make:command
+    make:component
+    make:controller
+    make:event
+    make:exception
+    make:factory
+    make:job
+    make:listener
+    make:mail
+    make:middleware
+    make:migration
+    make:model
+    make:notification
+    make:observer
+    make:policy
+    make:provider
+    make:request
+    make:resource
+    make:rule
+    make:seeder
+    make:test {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"make:migrations\" is not defined.
+
+Did you mean one of these?
+    make:cast
+    make:channel
+    make:command
+    make:component
+    make:controller
+    make:event
+    make:exception
+    make:factory
+    make:job
+    make:listener
+    make:mail
+    make:middleware
+    make:migration
+    make:model
+    make:notification
+    make:observer
+    make:policy
+    make:provider
+    make:request
+    make:resource
+    make:rule
+    make:seeder
+    make:test at /var/www/html/vendor/symfony/console/Application.php:709)
+[stacktrace]
+#0 /var/www/html/vendor/symfony/console/Application.php(259): Symfony\\Component\\Console\\Application->find()
+#1 /var/www/html/vendor/symfony/console/Application.php(171): Symfony\\Component\\Console\\Application->doRun()
+#2 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Application.php(94): Symfony\\Component\\Console\\Application->run()
+#3 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run()
+#4 /var/www/html/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle()
+#5 {main}
+"} 
+[2021-12-23 11:24:40] local.ERROR: SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'areas' already exists (SQL: create table `areas` (`id` bigint unsigned not null auto_increment primary key, `created_at` timestamp null, `updated_at` timestamp null) default character set utf8mb4 collate 'utf8mb4_unicode_ci') {"exception":"[object] (Illuminate\\Database\\QueryException(code: 42S01): SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'areas' already exists (SQL: create table `areas` (`id` bigint unsigned not null auto_increment primary key, `created_at` timestamp null, `updated_at` timestamp null) default character set utf8mb4 collate 'utf8mb4_unicode_ci') at /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php:703)
+[stacktrace]
+#0 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php(663): Illuminate\\Database\\Connection->runQueryCallback()
+#1 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php(493): Illuminate\\Database\\Connection->run()
+#2 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Schema/Blueprint.php(109): Illuminate\\Database\\Connection->statement()
+#3 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(365): Illuminate\\Database\\Schema\\Blueprint->build()
+#4 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(228): Illuminate\\Database\\Schema\\Builder->build()
+#5 /var/www/html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(261): Illuminate\\Database\\Schema\\Builder->create()
+#6 /var/www/html/database/migrations/2021_12_23_112158_create_areas_table.php(19): Illuminate\\Support\\Facades\\Facade::__callStatic()
+#7 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(394): CreateAreasTable->up()
+#8 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(403): Illuminate\\Database\\Migrations\\Migrator->Illuminate\\Database\\Migrations\\{closure}()
+#9 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(202): Illuminate\\Database\\Migrations\\Migrator->runMigration()
+#10 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(167): Illuminate\\Database\\Migrations\\Migrator->runUp()
+#11 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(112): Illuminate\\Database\\Migrations\\Migrator->runPending()
+#12 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(85): Illuminate\\Database\\Migrations\\Migrator->run()
+#13 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(585): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->Illuminate\\Database\\Console\\Migrations\\{closure}()
+#14 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(94): Illuminate\\Database\\Migrations\\Migrator->usingConnection()
+#15 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+#16 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#17 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
+#18 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#19 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(653): Illuminate\\Container\\BoundMethod::call()
+#20 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Command.php(136): Illuminate\\Container\\Container->call()
+#21 /var/www/html/vendor/symfony/console/Command/Command.php(298): Illuminate\\Console\\Command->execute()
+#22 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Command.php(121): Symfony\\Component\\Console\\Command\\Command->run()
+#23 /var/www/html/vendor/symfony/console/Application.php(1005): Illuminate\\Console\\Command->run()
+#24 /var/www/html/vendor/symfony/console/Application.php(299): Symfony\\Component\\Console\\Application->doRunCommand()
+#25 /var/www/html/vendor/symfony/console/Application.php(171): Symfony\\Component\\Console\\Application->doRun()
+#26 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Application.php(94): Symfony\\Component\\Console\\Application->run()
+#27 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run()
+#28 /var/www/html/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle()
+#29 {main}
+
+[previous exception] [object] (PDOException(code: 42S01): SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'areas' already exists at /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php:492)
+[stacktrace]
+#0 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php(492): PDOStatement->execute()
+#1 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php(696): Illuminate\\Database\\Connection->Illuminate\\Database\\{closure}()
+#2 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php(663): Illuminate\\Database\\Connection->runQueryCallback()
+#3 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php(493): Illuminate\\Database\\Connection->run()
+#4 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Schema/Blueprint.php(109): Illuminate\\Database\\Connection->statement()
+#5 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(365): Illuminate\\Database\\Schema\\Blueprint->build()
+#6 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(228): Illuminate\\Database\\Schema\\Builder->build()
+#7 /var/www/html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(261): Illuminate\\Database\\Schema\\Builder->create()
+#8 /var/www/html/database/migrations/2021_12_23_112158_create_areas_table.php(19): Illuminate\\Support\\Facades\\Facade::__callStatic()
+#9 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(394): CreateAreasTable->up()
+#10 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(403): Illuminate\\Database\\Migrations\\Migrator->Illuminate\\Database\\Migrations\\{closure}()
+#11 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(202): Illuminate\\Database\\Migrations\\Migrator->runMigration()
+#12 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(167): Illuminate\\Database\\Migrations\\Migrator->runUp()
+#13 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(112): Illuminate\\Database\\Migrations\\Migrator->runPending()
+#14 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(85): Illuminate\\Database\\Migrations\\Migrator->run()
+#15 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(585): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->Illuminate\\Database\\Console\\Migrations\\{closure}()
+#16 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(94): Illuminate\\Database\\Migrations\\Migrator->usingConnection()
+#17 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+#18 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#19 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
+#20 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#21 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(653): Illuminate\\Container\\BoundMethod::call()
+#22 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Command.php(136): Illuminate\\Container\\Container->call()
+#23 /var/www/html/vendor/symfony/console/Command/Command.php(298): Illuminate\\Console\\Command->execute()
+#24 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Command.php(121): Symfony\\Component\\Console\\Command\\Command->run()
+#25 /var/www/html/vendor/symfony/console/Application.php(1005): Illuminate\\Console\\Command->run()
+#26 /var/www/html/vendor/symfony/console/Application.php(299): Symfony\\Component\\Console\\Application->doRunCommand()
+#27 /var/www/html/vendor/symfony/console/Application.php(171): Symfony\\Component\\Console\\Application->doRun()
+#28 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Application.php(94): Symfony\\Component\\Console\\Application->run()
+#29 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run()
+#30 /var/www/html/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle()
+#31 {main}
+"} 
+[2021-12-23 11:25:06] local.ERROR: Command "migrate:rolback" is not defined.
+
+Did you mean one of these?
+    migrate
+    migrate:fresh
+    migrate:install
+    migrate:refresh
+    migrate:reset
+    migrate:rollback
+    migrate:status {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"migrate:rolback\" is not defined.
+
+Did you mean one of these?
+    migrate
+    migrate:fresh
+    migrate:install
+    migrate:refresh
+    migrate:reset
+    migrate:rollback
+    migrate:status at /var/www/html/vendor/symfony/console/Application.php:709)
+[stacktrace]
+#0 /var/www/html/vendor/symfony/console/Application.php(259): Symfony\\Component\\Console\\Application->find()
+#1 /var/www/html/vendor/symfony/console/Application.php(171): Symfony\\Component\\Console\\Application->doRun()
+#2 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Application.php(94): Symfony\\Component\\Console\\Application->run()
+#3 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run()
+#4 /var/www/html/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle()
+#5 {main}
+"} 
+[2021-12-23 11:25:20] local.ERROR: SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'areas' already exists (SQL: create table `areas` (`id` bigint unsigned not null auto_increment primary key, `created_at` timestamp null, `updated_at` timestamp null) default character set utf8mb4 collate 'utf8mb4_unicode_ci') {"exception":"[object] (Illuminate\\Database\\QueryException(code: 42S01): SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'areas' already exists (SQL: create table `areas` (`id` bigint unsigned not null auto_increment primary key, `created_at` timestamp null, `updated_at` timestamp null) default character set utf8mb4 collate 'utf8mb4_unicode_ci') at /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php:703)
+[stacktrace]
+#0 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php(663): Illuminate\\Database\\Connection->runQueryCallback()
+#1 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php(493): Illuminate\\Database\\Connection->run()
+#2 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Schema/Blueprint.php(109): Illuminate\\Database\\Connection->statement()
+#3 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(365): Illuminate\\Database\\Schema\\Blueprint->build()
+#4 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(228): Illuminate\\Database\\Schema\\Builder->build()
+#5 /var/www/html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(261): Illuminate\\Database\\Schema\\Builder->create()
+#6 /var/www/html/database/migrations/2021_12_23_112158_create_areas_table.php(19): Illuminate\\Support\\Facades\\Facade::__callStatic()
+#7 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(394): CreateAreasTable->up()
+#8 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(403): Illuminate\\Database\\Migrations\\Migrator->Illuminate\\Database\\Migrations\\{closure}()
+#9 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(202): Illuminate\\Database\\Migrations\\Migrator->runMigration()
+#10 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(167): Illuminate\\Database\\Migrations\\Migrator->runUp()
+#11 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(112): Illuminate\\Database\\Migrations\\Migrator->runPending()
+#12 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(85): Illuminate\\Database\\Migrations\\Migrator->run()
+#13 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(585): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->Illuminate\\Database\\Console\\Migrations\\{closure}()
+#14 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(94): Illuminate\\Database\\Migrations\\Migrator->usingConnection()
+#15 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+#16 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#17 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
+#18 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#19 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(653): Illuminate\\Container\\BoundMethod::call()
+#20 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Command.php(136): Illuminate\\Container\\Container->call()
+#21 /var/www/html/vendor/symfony/console/Command/Command.php(298): Illuminate\\Console\\Command->execute()
+#22 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Command.php(121): Symfony\\Component\\Console\\Command\\Command->run()
+#23 /var/www/html/vendor/symfony/console/Application.php(1005): Illuminate\\Console\\Command->run()
+#24 /var/www/html/vendor/symfony/console/Application.php(299): Symfony\\Component\\Console\\Application->doRunCommand()
+#25 /var/www/html/vendor/symfony/console/Application.php(171): Symfony\\Component\\Console\\Application->doRun()
+#26 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Application.php(94): Symfony\\Component\\Console\\Application->run()
+#27 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run()
+#28 /var/www/html/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle()
+#29 {main}
+
+[previous exception] [object] (PDOException(code: 42S01): SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'areas' already exists at /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php:492)
+[stacktrace]
+#0 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php(492): PDOStatement->execute()
+#1 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php(696): Illuminate\\Database\\Connection->Illuminate\\Database\\{closure}()
+#2 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php(663): Illuminate\\Database\\Connection->runQueryCallback()
+#3 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php(493): Illuminate\\Database\\Connection->run()
+#4 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Schema/Blueprint.php(109): Illuminate\\Database\\Connection->statement()
+#5 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(365): Illuminate\\Database\\Schema\\Blueprint->build()
+#6 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(228): Illuminate\\Database\\Schema\\Builder->build()
+#7 /var/www/html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(261): Illuminate\\Database\\Schema\\Builder->create()
+#8 /var/www/html/database/migrations/2021_12_23_112158_create_areas_table.php(19): Illuminate\\Support\\Facades\\Facade::__callStatic()
+#9 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(394): CreateAreasTable->up()
+#10 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(403): Illuminate\\Database\\Migrations\\Migrator->Illuminate\\Database\\Migrations\\{closure}()
+#11 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(202): Illuminate\\Database\\Migrations\\Migrator->runMigration()
+#12 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(167): Illuminate\\Database\\Migrations\\Migrator->runUp()
+#13 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(112): Illuminate\\Database\\Migrations\\Migrator->runPending()
+#14 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(85): Illuminate\\Database\\Migrations\\Migrator->run()
+#15 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(585): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->Illuminate\\Database\\Console\\Migrations\\{closure}()
+#16 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(94): Illuminate\\Database\\Migrations\\Migrator->usingConnection()
+#17 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+#18 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#19 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
+#20 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#21 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(653): Illuminate\\Container\\BoundMethod::call()
+#22 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Command.php(136): Illuminate\\Container\\Container->call()
+#23 /var/www/html/vendor/symfony/console/Command/Command.php(298): Illuminate\\Console\\Command->execute()
+#24 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Command.php(121): Symfony\\Component\\Console\\Command\\Command->run()
+#25 /var/www/html/vendor/symfony/console/Application.php(1005): Illuminate\\Console\\Command->run()
+#26 /var/www/html/vendor/symfony/console/Application.php(299): Symfony\\Component\\Console\\Application->doRunCommand()
+#27 /var/www/html/vendor/symfony/console/Application.php(171): Symfony\\Component\\Console\\Application->doRun()
+#28 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Application.php(94): Symfony\\Component\\Console\\Application->run()
+#29 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run()
+#30 /var/www/html/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle()
+#31 {main}
+"} 
+[2021-12-23 11:25:39] local.ERROR: SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'areas' already exists (SQL: create table `areas` (`id` bigint unsigned not null auto_increment primary key, `created_at` timestamp null, `updated_at` timestamp null) default character set utf8mb4 collate 'utf8mb4_unicode_ci') {"exception":"[object] (Illuminate\\Database\\QueryException(code: 42S01): SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'areas' already exists (SQL: create table `areas` (`id` bigint unsigned not null auto_increment primary key, `created_at` timestamp null, `updated_at` timestamp null) default character set utf8mb4 collate 'utf8mb4_unicode_ci') at /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php:703)
+[stacktrace]
+#0 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php(663): Illuminate\\Database\\Connection->runQueryCallback()
+#1 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php(493): Illuminate\\Database\\Connection->run()
+#2 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Schema/Blueprint.php(109): Illuminate\\Database\\Connection->statement()
+#3 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(365): Illuminate\\Database\\Schema\\Blueprint->build()
+#4 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(228): Illuminate\\Database\\Schema\\Builder->build()
+#5 /var/www/html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(261): Illuminate\\Database\\Schema\\Builder->create()
+#6 /var/www/html/database/migrations/2021_12_23_112158_create_areas_table.php(19): Illuminate\\Support\\Facades\\Facade::__callStatic()
+#7 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(394): CreateAreasTable->up()
+#8 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(403): Illuminate\\Database\\Migrations\\Migrator->Illuminate\\Database\\Migrations\\{closure}()
+#9 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(202): Illuminate\\Database\\Migrations\\Migrator->runMigration()
+#10 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(167): Illuminate\\Database\\Migrations\\Migrator->runUp()
+#11 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(112): Illuminate\\Database\\Migrations\\Migrator->runPending()
+#12 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(85): Illuminate\\Database\\Migrations\\Migrator->run()
+#13 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(585): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->Illuminate\\Database\\Console\\Migrations\\{closure}()
+#14 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(94): Illuminate\\Database\\Migrations\\Migrator->usingConnection()
+#15 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+#16 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#17 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
+#18 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#19 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(653): Illuminate\\Container\\BoundMethod::call()
+#20 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Command.php(136): Illuminate\\Container\\Container->call()
+#21 /var/www/html/vendor/symfony/console/Command/Command.php(298): Illuminate\\Console\\Command->execute()
+#22 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Command.php(121): Symfony\\Component\\Console\\Command\\Command->run()
+#23 /var/www/html/vendor/symfony/console/Application.php(1005): Illuminate\\Console\\Command->run()
+#24 /var/www/html/vendor/symfony/console/Application.php(299): Symfony\\Component\\Console\\Application->doRunCommand()
+#25 /var/www/html/vendor/symfony/console/Application.php(171): Symfony\\Component\\Console\\Application->doRun()
+#26 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Application.php(94): Symfony\\Component\\Console\\Application->run()
+#27 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run()
+#28 /var/www/html/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle()
+#29 {main}
+
+[previous exception] [object] (PDOException(code: 42S01): SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'areas' already exists at /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php:492)
+[stacktrace]
+#0 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php(492): PDOStatement->execute()
+#1 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php(696): Illuminate\\Database\\Connection->Illuminate\\Database\\{closure}()
+#2 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php(663): Illuminate\\Database\\Connection->runQueryCallback()
+#3 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php(493): Illuminate\\Database\\Connection->run()
+#4 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Schema/Blueprint.php(109): Illuminate\\Database\\Connection->statement()
+#5 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(365): Illuminate\\Database\\Schema\\Blueprint->build()
+#6 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(228): Illuminate\\Database\\Schema\\Builder->build()
+#7 /var/www/html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(261): Illuminate\\Database\\Schema\\Builder->create()
+#8 /var/www/html/database/migrations/2021_12_23_112158_create_areas_table.php(19): Illuminate\\Support\\Facades\\Facade::__callStatic()
+#9 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(394): CreateAreasTable->up()
+#10 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(403): Illuminate\\Database\\Migrations\\Migrator->Illuminate\\Database\\Migrations\\{closure}()
+#11 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(202): Illuminate\\Database\\Migrations\\Migrator->runMigration()
+#12 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(167): Illuminate\\Database\\Migrations\\Migrator->runUp()
+#13 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(112): Illuminate\\Database\\Migrations\\Migrator->runPending()
+#14 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(85): Illuminate\\Database\\Migrations\\Migrator->run()
+#15 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(585): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->Illuminate\\Database\\Console\\Migrations\\{closure}()
+#16 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(94): Illuminate\\Database\\Migrations\\Migrator->usingConnection()
+#17 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+#18 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#19 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
+#20 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#21 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(653): Illuminate\\Container\\BoundMethod::call()
+#22 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Command.php(136): Illuminate\\Container\\Container->call()
+#23 /var/www/html/vendor/symfony/console/Command/Command.php(298): Illuminate\\Console\\Command->execute()
+#24 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Command.php(121): Symfony\\Component\\Console\\Command\\Command->run()
+#25 /var/www/html/vendor/symfony/console/Application.php(1005): Illuminate\\Console\\Command->run()
+#26 /var/www/html/vendor/symfony/console/Application.php(299): Symfony\\Component\\Console\\Application->doRunCommand()
+#27 /var/www/html/vendor/symfony/console/Application.php(171): Symfony\\Component\\Console\\Application->doRun()
+#28 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Application.php(94): Symfony\\Component\\Console\\Application->run()
+#29 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run()
+#30 /var/www/html/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle()
+#31 {main}
+"} 
+[2021-12-23 11:30:21] local.ERROR: SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'states' already exists (SQL: create table `states` (`id` bigint unsigned not null auto_increment primary key, `name` varchar(255) not null, `created_at` timestamp null, `updated_at` timestamp null) default character set utf8mb4 collate 'utf8mb4_unicode_ci') {"exception":"[object] (Illuminate\\Database\\QueryException(code: 42S01): SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'states' already exists (SQL: create table `states` (`id` bigint unsigned not null auto_increment primary key, `name` varchar(255) not null, `created_at` timestamp null, `updated_at` timestamp null) default character set utf8mb4 collate 'utf8mb4_unicode_ci') at /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php:703)
+[stacktrace]
+#0 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php(663): Illuminate\\Database\\Connection->runQueryCallback()
+#1 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php(493): Illuminate\\Database\\Connection->run()
+#2 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Schema/Blueprint.php(109): Illuminate\\Database\\Connection->statement()
+#3 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(365): Illuminate\\Database\\Schema\\Blueprint->build()
+#4 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(228): Illuminate\\Database\\Schema\\Builder->build()
+#5 /var/www/html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(261): Illuminate\\Database\\Schema\\Builder->create()
+#6 /var/www/html/database/migrations/2021_12_23_112157_create_states_table.php(20): Illuminate\\Support\\Facades\\Facade::__callStatic()
+#7 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(394): CreateStatesTable->up()
+#8 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(403): Illuminate\\Database\\Migrations\\Migrator->Illuminate\\Database\\Migrations\\{closure}()
+#9 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(202): Illuminate\\Database\\Migrations\\Migrator->runMigration()
+#10 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(167): Illuminate\\Database\\Migrations\\Migrator->runUp()
+#11 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(112): Illuminate\\Database\\Migrations\\Migrator->runPending()
+#12 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(85): Illuminate\\Database\\Migrations\\Migrator->run()
+#13 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(585): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->Illuminate\\Database\\Console\\Migrations\\{closure}()
+#14 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(94): Illuminate\\Database\\Migrations\\Migrator->usingConnection()
+#15 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+#16 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#17 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
+#18 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#19 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(653): Illuminate\\Container\\BoundMethod::call()
+#20 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Command.php(136): Illuminate\\Container\\Container->call()
+#21 /var/www/html/vendor/symfony/console/Command/Command.php(298): Illuminate\\Console\\Command->execute()
+#22 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Command.php(121): Symfony\\Component\\Console\\Command\\Command->run()
+#23 /var/www/html/vendor/symfony/console/Application.php(1005): Illuminate\\Console\\Command->run()
+#24 /var/www/html/vendor/symfony/console/Application.php(299): Symfony\\Component\\Console\\Application->doRunCommand()
+#25 /var/www/html/vendor/symfony/console/Application.php(171): Symfony\\Component\\Console\\Application->doRun()
+#26 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Application.php(94): Symfony\\Component\\Console\\Application->run()
+#27 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run()
+#28 /var/www/html/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle()
+#29 {main}
+
+[previous exception] [object] (PDOException(code: 42S01): SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'states' already exists at /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php:492)
+[stacktrace]
+#0 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php(492): PDOStatement->execute()
+#1 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php(696): Illuminate\\Database\\Connection->Illuminate\\Database\\{closure}()
+#2 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php(663): Illuminate\\Database\\Connection->runQueryCallback()
+#3 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php(493): Illuminate\\Database\\Connection->run()
+#4 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Schema/Blueprint.php(109): Illuminate\\Database\\Connection->statement()
+#5 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(365): Illuminate\\Database\\Schema\\Blueprint->build()
+#6 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(228): Illuminate\\Database\\Schema\\Builder->build()
+#7 /var/www/html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(261): Illuminate\\Database\\Schema\\Builder->create()
+#8 /var/www/html/database/migrations/2021_12_23_112157_create_states_table.php(20): Illuminate\\Support\\Facades\\Facade::__callStatic()
+#9 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(394): CreateStatesTable->up()
+#10 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(403): Illuminate\\Database\\Migrations\\Migrator->Illuminate\\Database\\Migrations\\{closure}()
+#11 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(202): Illuminate\\Database\\Migrations\\Migrator->runMigration()
+#12 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(167): Illuminate\\Database\\Migrations\\Migrator->runUp()
+#13 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(112): Illuminate\\Database\\Migrations\\Migrator->runPending()
+#14 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(85): Illuminate\\Database\\Migrations\\Migrator->run()
+#15 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(585): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->Illuminate\\Database\\Console\\Migrations\\{closure}()
+#16 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(94): Illuminate\\Database\\Migrations\\Migrator->usingConnection()
+#17 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+#18 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#19 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
+#20 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#21 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(653): Illuminate\\Container\\BoundMethod::call()
+#22 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Command.php(136): Illuminate\\Container\\Container->call()
+#23 /var/www/html/vendor/symfony/console/Command/Command.php(298): Illuminate\\Console\\Command->execute()
+#24 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Command.php(121): Symfony\\Component\\Console\\Command\\Command->run()
+#25 /var/www/html/vendor/symfony/console/Application.php(1005): Illuminate\\Console\\Command->run()
+#26 /var/www/html/vendor/symfony/console/Application.php(299): Symfony\\Component\\Console\\Application->doRunCommand()
+#27 /var/www/html/vendor/symfony/console/Application.php(171): Symfony\\Component\\Console\\Application->doRun()
+#28 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Application.php(94): Symfony\\Component\\Console\\Application->run()
+#29 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run()
+#30 /var/www/html/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle()
+#31 {main}
+"} 
+[2021-12-23 11:30:29] local.ERROR: SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'states' already exists (SQL: create table `states` (`id` bigint unsigned not null auto_increment primary key, `name` varchar(255) not null, `created_at` timestamp null, `updated_at` timestamp null) default character set utf8mb4 collate 'utf8mb4_unicode_ci') {"exception":"[object] (Illuminate\\Database\\QueryException(code: 42S01): SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'states' already exists (SQL: create table `states` (`id` bigint unsigned not null auto_increment primary key, `name` varchar(255) not null, `created_at` timestamp null, `updated_at` timestamp null) default character set utf8mb4 collate 'utf8mb4_unicode_ci') at /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php:703)
+[stacktrace]
+#0 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php(663): Illuminate\\Database\\Connection->runQueryCallback()
+#1 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php(493): Illuminate\\Database\\Connection->run()
+#2 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Schema/Blueprint.php(109): Illuminate\\Database\\Connection->statement()
+#3 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(365): Illuminate\\Database\\Schema\\Blueprint->build()
+#4 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(228): Illuminate\\Database\\Schema\\Builder->build()
+#5 /var/www/html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(261): Illuminate\\Database\\Schema\\Builder->create()
+#6 /var/www/html/database/migrations/2021_12_23_112157_create_states_table.php(20): Illuminate\\Support\\Facades\\Facade::__callStatic()
+#7 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(394): CreateStatesTable->up()
+#8 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(403): Illuminate\\Database\\Migrations\\Migrator->Illuminate\\Database\\Migrations\\{closure}()
+#9 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(202): Illuminate\\Database\\Migrations\\Migrator->runMigration()
+#10 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(167): Illuminate\\Database\\Migrations\\Migrator->runUp()
+#11 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(112): Illuminate\\Database\\Migrations\\Migrator->runPending()
+#12 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(85): Illuminate\\Database\\Migrations\\Migrator->run()
+#13 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(585): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->Illuminate\\Database\\Console\\Migrations\\{closure}()
+#14 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(94): Illuminate\\Database\\Migrations\\Migrator->usingConnection()
+#15 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+#16 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#17 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
+#18 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#19 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(653): Illuminate\\Container\\BoundMethod::call()
+#20 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Command.php(136): Illuminate\\Container\\Container->call()
+#21 /var/www/html/vendor/symfony/console/Command/Command.php(298): Illuminate\\Console\\Command->execute()
+#22 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Command.php(121): Symfony\\Component\\Console\\Command\\Command->run()
+#23 /var/www/html/vendor/symfony/console/Application.php(1005): Illuminate\\Console\\Command->run()
+#24 /var/www/html/vendor/symfony/console/Application.php(299): Symfony\\Component\\Console\\Application->doRunCommand()
+#25 /var/www/html/vendor/symfony/console/Application.php(171): Symfony\\Component\\Console\\Application->doRun()
+#26 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Application.php(94): Symfony\\Component\\Console\\Application->run()
+#27 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run()
+#28 /var/www/html/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle()
+#29 {main}
+
+[previous exception] [object] (PDOException(code: 42S01): SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'states' already exists at /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php:492)
+[stacktrace]
+#0 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php(492): PDOStatement->execute()
+#1 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php(696): Illuminate\\Database\\Connection->Illuminate\\Database\\{closure}()
+#2 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php(663): Illuminate\\Database\\Connection->runQueryCallback()
+#3 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php(493): Illuminate\\Database\\Connection->run()
+#4 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Schema/Blueprint.php(109): Illuminate\\Database\\Connection->statement()
+#5 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(365): Illuminate\\Database\\Schema\\Blueprint->build()
+#6 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(228): Illuminate\\Database\\Schema\\Builder->build()
+#7 /var/www/html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(261): Illuminate\\Database\\Schema\\Builder->create()
+#8 /var/www/html/database/migrations/2021_12_23_112157_create_states_table.php(20): Illuminate\\Support\\Facades\\Facade::__callStatic()
+#9 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(394): CreateStatesTable->up()
+#10 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(403): Illuminate\\Database\\Migrations\\Migrator->Illuminate\\Database\\Migrations\\{closure}()
+#11 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(202): Illuminate\\Database\\Migrations\\Migrator->runMigration()
+#12 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(167): Illuminate\\Database\\Migrations\\Migrator->runUp()
+#13 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(112): Illuminate\\Database\\Migrations\\Migrator->runPending()
+#14 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(85): Illuminate\\Database\\Migrations\\Migrator->run()
+#15 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(585): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->Illuminate\\Database\\Console\\Migrations\\{closure}()
+#16 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(94): Illuminate\\Database\\Migrations\\Migrator->usingConnection()
+#17 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+#18 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#19 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
+#20 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#21 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(653): Illuminate\\Container\\BoundMethod::call()
+#22 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Command.php(136): Illuminate\\Container\\Container->call()
+#23 /var/www/html/vendor/symfony/console/Command/Command.php(298): Illuminate\\Console\\Command->execute()
+#24 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Command.php(121): Symfony\\Component\\Console\\Command\\Command->run()
+#25 /var/www/html/vendor/symfony/console/Application.php(1005): Illuminate\\Console\\Command->run()
+#26 /var/www/html/vendor/symfony/console/Application.php(299): Symfony\\Component\\Console\\Application->doRunCommand()
+#27 /var/www/html/vendor/symfony/console/Application.php(171): Symfony\\Component\\Console\\Application->doRun()
+#28 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Application.php(94): Symfony\\Component\\Console\\Application->run()
+#29 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run()
+#30 /var/www/html/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle()
+#31 {main}
+"} 
