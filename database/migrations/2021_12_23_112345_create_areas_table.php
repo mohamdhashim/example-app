@@ -17,7 +17,7 @@ class CreateAreasTable extends Migration
             $table->id();
             $table->string("name");
             $table->unsignedBigInteger("city_id");
-            $table->foreign('city_id')->references('id')->on('cities')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('city_id')->references('id')->on('cities');
             $table->timestamps();
         });
     }

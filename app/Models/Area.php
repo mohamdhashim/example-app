@@ -13,7 +13,7 @@ class Area extends Model
 
     protected $primarykey = 'id';
     
-    protected $fillable = ['name'];
+    protected $fillable = ['name','city_id'];
     
     public function city()
     {

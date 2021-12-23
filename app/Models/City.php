@@ -13,7 +13,7 @@ class City extends Model
 
     protected $primarykey = 'id';
     
-    protected $fillable = ['name'];
+    protected $fillable = ['name','state_id'];
     
     public function areas()
     {
