@@ -11,9 +11,9 @@ class Address extends Model
     protected $table = 'addresses';
 
     protected $primarykey = 'id';
-    
+
     protected $fillable = ['floor','street','building','apartment','area_id','user_id'];
-    
+
     public function area()
     {
         return $this->belongsTo(Area::class);

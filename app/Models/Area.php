@@ -12,9 +12,9 @@ class Area extends Model
     protected $table = 'areas';
 
     protected $primarykey = 'id';
-    
+
     protected $fillable = ['name','city_id'];
-    
+
     public function city()
     {
         return $this->belongsTo(City::class);
