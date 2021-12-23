@@ -13,12 +13,11 @@ class State extends Model
     protected $table = 'states';
 
     protected $primarykey = 'id';
-    
+
     protected $fillable = ['name'];
-    
+
     public function cities()
     {
         return $this->hasMany(City::class);
     }
-
 }

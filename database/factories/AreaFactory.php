@@ -17,7 +17,7 @@ class AreaFactory extends Factory
     {
         return [
             "name" => $this->faker->address(),
-            'city_id'=> rand(1,40)
+            'city_id'=> rand(1, 40)
         ];
     }
 }

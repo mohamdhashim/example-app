@@ -12,9 +12,9 @@ class City extends Model
     protected $table = 'cities';
 
     protected $primarykey = 'id';
-    
+
     protected $fillable = ['name','state_id'];
-    
+
     public function areas()
     {
         return $this->hasMany(Area::class);
