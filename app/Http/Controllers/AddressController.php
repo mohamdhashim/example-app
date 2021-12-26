@@ -51,6 +51,13 @@ class AddressController extends Controller
         $area_id = Area::where('name',$data['area'])->first()['id'];
         $user_id = User::where('email',$data['area'])->first()['id'];
 
+        if($area_id == null){
+            return response("<h1>Area not Exists<h1>",404);
+        }else if($user_id ==null)
+        {
+            return response("<h1>This User not Exists<h1>",404);
+        }
+        
         $address = Address::create([
             'floor' =>$data['floor'],
             'building'=>$data['building'],
