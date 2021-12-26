@@ -15,7 +15,8 @@ class AddressController extends Controller
     public function address ($id){
 
         $address = Address::find($id,["street","building","floor","apartment"]); 
-
+        if ($address == null)
+            return response("<h1>Address not Exists<h1>",404);
         //format result ==> “building street, Floor: floor, Apartment: apartment” 
         if ($address["floor"] === null)
             $format = "%d %s";
@@ -57,7 +58,7 @@ class AddressController extends Controller
         {
             return response("<h1>This User not Exists<h1>",404);
         }
-        
+
         $address = Address::create([
             'floor' =>$data['floor'],
             'building'=>$data['building'],
