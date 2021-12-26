@@ -11,10 +11,10 @@ class AddressController extends Controller
     public function userAddresses($id){
         
         if (is_null(User::find($id)))
-            return response(["message"=>"Record not found!"],400);
+            return response()->json(['addresses'=>["message"=>"User Record not found!"]], 400);
 
 
-        return response()->json(['Addresses'=>Address::where('user_id',$id)->get()], 200);
+        return response()->json(['addresses'=>Address::where('user_id',$id)->get()], 200);
     }
 
     public function address ($id){
@@ -22,7 +22,7 @@ class AddressController extends Controller
         
         $address = Address::find($id,["street","building","floor","apartment"]); 
         if (is_null($address))
-            return response(["message"=>"Record not found!"],400);
+            return response(["address"=>["message"=>"Address Record not found!"]],400);
             
         //format result ==> “building street, Floor: floor, Apartment: apartment” 
         $formated_address = "{$address["building"]} {$address['street']}";
@@ -33,7 +33,7 @@ class AddressController extends Controller
         if(isset($address["apartment"]))
             $formated_address .= ", Apartment: {$address["apartment"]}";
 
-        return response()->json($formated_address,200);
+        return response()->json(["address"=>$formated_address],200);
     }
 
     public function deleteAddress($id){
@@ -45,7 +45,7 @@ class AddressController extends Controller
             return response()->json(['isAddressDeleted'=>$is_deleted],201);
         }else{
             
-            return response(["message"=>"Record not found!"],400);
+            return response(['isAddressDeleted'=>["message"=>"Address Record not found!"]],400);
         }
     }
 
@@ -53,10 +53,10 @@ class AddressController extends Controller
 
         //Parameters: street, building, floor, apt, area and email.
         $rules = [
-            'floor' =>'required|nullable',
+            'floor' =>'nullable',
             'building'=>'required',
             'street'=>'required',
-            'apartment'=>'required|nullable',
+            'apartment'=>'nullable',
             'area'=>'required',
             'email'=>'required|email'
         ];
@@ -68,17 +68,28 @@ class AddressController extends Controller
 
 
         $data = $request->all();
-        $area_id = Area::where('name',$data['area'])->first()['id'];
-        $user_id = User::where('email',$data['email'])->first()['id'];
+        $area = Area::where('name',$data['area'])->first();
+        $user = User::where('email',$data['email'])->first();
 
 
-        if(is_null($area_id)){
-            return response(["message"=>"Record not found!"],400);
-        }else if(is_null($user_id))
+        if(is_null($area)){
+            return response(["message"=>"Area Record not found!"],400);
+        }else if(is_null($user))
         {
-            return response(["message"=>"Record not found!"],400);
+            return response(["address"=>["message"=>"User Record not found!"]],400);
         }
 
+
+        //if ['floor','apartment'] not in request ==> null 
+        if (!array_key_exists('floor',$data))
+            $data['floor']=null;
+
+        if (!array_key_exists('apartment',$data))
+            $data['apartment']=null;
+
+            
+        $area_id = $area['id'];
+        $user_id = $user['id'];
         $address = Address::create([
             'floor' =>$data['floor'],
             'building'=>$data['building'],
@@ -87,7 +98,7 @@ class AddressController extends Controller
             'area_id'=>$area_id,
             'user_id'=>$user_id
         ]);
-        return response()->json($address,201);
+        return response()->json(["address" => $address],201);
     }
 
 
