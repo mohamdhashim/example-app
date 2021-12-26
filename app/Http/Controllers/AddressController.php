@@ -50,7 +50,7 @@ class AddressController extends Controller
         //
         $data = $request->all();
         $area_id = Area::where('name',$data['area'])->first()['id'];
-        $user_id = User::where('email',$data['area'])->first()['id'];
+        $user_id = User::where('email',$data['email'])->first()['id'];
 
         if($area_id == null){
             return response("<h1>Area not Exists<h1>",404);
