@@ -4,29 +4,35 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\{Address,User,Area};
-use Exception;
+use Illuminate\Support\Facades\Validator;
 
 class AddressController extends Controller
 {
     public function userAddresses($id){
-        return response()->json(User::find($id)->addresses, 200);
+        
+        if (is_null(User::find($id)))
+            return response(["message"=>"Record not found!"],400);
+
+
+        return response()->json(['Addresses'=>Address::where('user_id',$id)->get()], 200);
     }
 
     public function address ($id){
 
+        
         $address = Address::find($id,["street","building","floor","apartment"]); 
-        if ($address == null)
-            return response("<h1>Address not Exists<h1>",404);
+        if (is_null($address))
+            return response(["message"=>"Record not found!"],400);
+            
         //format result ==> “building street, Floor: floor, Apartment: apartment” 
-        if ($address["floor"] === null)
-            $format = "%d %s";
-        else if($address["apartment"] === null)
-            $format = "%d %s, Floor: %s";
-        else
-            $format = "%d %s, Floor: %s, Apartment: %s";
+        $formated_address = "{$address["building"]} {$address['street']}";
 
-        //sprintf will ignore parameters that not exists in format string
-        $formated_address = sprintf($format, $address["building"], $address['street'], $address["floor"],$address['apartment']);
+        // if Address has floor or apartment add it 
+        if(isset($address["floor"]))
+            $formated_address .= ", Floor: {$address["floor"]}";
+        if(isset($address["apartment"]))
+            $formated_address .= ", Apartment: {$address["apartment"]}";
+
         return response()->json($formated_address,200);
     }
 
@@ -39,24 +45,38 @@ class AddressController extends Controller
             return response()->json(['isAddressDeleted'=>$is_deleted],201);
         }else{
             
-            return response("<h1>Address not Exists<h1>",404);
+            return response(["message"=>"Record not found!"],400);
         }
     }
 
     public function createAddress (Request $request){
 
         //Parameters: street, building, floor, apt, area and email.
-        //$address = Address::find($id,["street","building","floor","apartment"]); 
-        //
+        $rules = [
+            'floor' =>'required|nullable',
+            'building'=>'required',
+            'street'=>'required',
+            'apartment'=>'required|nullable',
+            'area'=>'required',
+            'email'=>'required|email'
+        ];
+
+        $validator = Validator::make($request->all(),$rules);
+        if($validator->fails()){
+            return response()->json($validator->errors(),400);
+        }
+
+
         $data = $request->all();
         $area_id = Area::where('name',$data['area'])->first()['id'];
         $user_id = User::where('email',$data['email'])->first()['id'];
 
-        if($area_id == null){
-            return response("<h1>Area not Exists<h1>",404);
-        }else if($user_id ==null)
+
+        if(is_null($area_id)){
+            return response(["message"=>"Record not found!"],400);
+        }else if(is_null($user_id))
         {
-            return response("<h1>This User not Exists<h1>",404);
+            return response(["message"=>"Record not found!"],400);
         }
 
         $address = Address::create([
