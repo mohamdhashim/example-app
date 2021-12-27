@@ -10,11 +10,14 @@ class AddressController extends Controller
 {
     public function userAddresses($id){
         
-        if (is_null(User::find($id)))
-            return response()->json(['addresses'=>["message"=>"User Record not found!"]], 400);
+
+        $addresses = Address::where('user_id',$id)->get()->all();
+
+        if (empty($addresses))
+            return response()->json(['addresses'=>[],"message"=>"No address found!"], 400);
 
 
-        return response()->json(['addresses'=>Address::where('user_id',$id)->get()], 200);
+        return response()->json(['addresses'=>Address::where('user_id',$id)->get()->all(),"message"=>"Addresses Listed Successfully!"], 200);
     }
 
     public function address ($id){
@@ -22,7 +25,7 @@ class AddressController extends Controller
         
         $address = Address::find($id,["street","building","floor","apartment"]); 
         if (is_null($address))
-            return response(["address"=>["message"=>"Address Record not found!"]],400);
+            return response(["address"=>"message: Address Record not found!"],400);
             
         //format result ==> “building street, Floor: floor, Apartment: apartment” 
         $formated_address = "{$address["building"]} {$address['street']}";
@@ -42,10 +45,13 @@ class AddressController extends Controller
 
         if($address){
             $is_deleted = $address->delete();
-            return response()->json(['isAddressDeleted'=>$is_deleted],201);
+            if($is_deleted)
+                return response()->json(['isAddressDeleted'=>$is_deleted,'message'=> 'Deleted Successfully!'],201);
+            else
+                return response()->json(['isAddressDeleted'=>$is_deleted,'message'=> 'Cannot delete this Record!'],201);
         }else{
             
-            return response(['isAddressDeleted'=>["message"=>"Address Record not found!"]],400);
+            return response(['isAddressDeleted'=>False,"message"=> "Record not found!"],400);
         }
     }
 
@@ -63,7 +69,7 @@ class AddressController extends Controller
 
         $validator = Validator::make($request->all(),$rules);
         if($validator->fails()){
-            return response()->json($validator->errors(),400);
+            return response()->json(["address" =>$validator->errors(),"message:" => "Bad Request Format!"] ,400);
         }
 
 
@@ -72,21 +78,22 @@ class AddressController extends Controller
         $user = User::where('email',$data['email'])->first();
 
 
-        if(is_null($area)){
-            return response(["message"=>"Area Record not found!"],400);
-        }else if(is_null($user))
+        if(!isset($area)){
+            return response()->json(["address" =>[],"message:" => "Area Record not found!"],400);
+        }else if(!isset($user))
         {
-            return response(["address"=>["message"=>"User Record not found!"]],400);
+            return response()->json(["address"=>[],"message:" => "User Record not found!"],400);
         }
 
 
         //if ['floor','apartment'] not in request ==> null 
+        // isset == [check if var declared or not first then check if null]
         if (!array_key_exists('floor',$data))
             $data['floor']=null;
 
         if (!array_key_exists('apartment',$data))
             $data['apartment']=null;
-
+        
             
         $area_id = $area['id'];
         $user_id = $user['id'];
@@ -98,7 +105,7 @@ class AddressController extends Controller
             'area_id'=>$area_id,
             'user_id'=>$user_id
         ]);
-        return response()->json(["address" => $address],201);
+        return response()->json(["address" => $address, "message:" => "Adress created Successfully!"],201);
     }
 
 
