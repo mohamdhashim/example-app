@@ -25,7 +25,7 @@ class AddressController extends Controller
         
         $address = Address::find($id,["street","building","floor","apartment"]); 
         if (!isset($address))
-            return response(["address"=>"message: Address Record not found!"],400);
+            return response()->json(["address"=>"message: Address Record not found!"],400);
             
         //format result ==> “building street, Floor: floor, Apartment: apartment” 
         $formated_address = "{$address["building"]} {$address['street']}";
