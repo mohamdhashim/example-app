@@ -33,9 +33,8 @@ export default {
             Addresses : "Addresses"
     }},
     mounted() {
-        fetch('http://localhost/api/user_addresses/20')
-        .then(res => res.json())
-        .then(data => this.Addresses = data['addresses'])
+        axios.get('http://localhost/api/user_addresses/20')
+        .then(data => this.Addresses = data['data']['addresses'])
         .catch(err => console.log(err.message))
     },
 }
