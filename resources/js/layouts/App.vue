@@ -1,6 +1,7 @@
 <template>
     <div id="nav">
         <sidebar />
+        <p></p>
         <router-view />
     </div>
 </template>
@@ -9,6 +10,8 @@
 import sidebar from "../components/SideBar.vue";
 export default {
     components: { sidebar },
+
+    methods: {},
 };
 </script>
 <style>
