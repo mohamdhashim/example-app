@@ -10,7 +10,9 @@
  
  import router from './router';
  import App from './layouts/App.vue';
- 
+ import { library } from '@fortawesome/fontawesome-svg-core'
+import { faBars } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
  /**
   * The following block of code may be used to automatically register your
   * Vue components. It will recursively scan this directory for the Vue
@@ -23,8 +25,12 @@
  // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
  
  //Remeber Registered Value Must be in KABAB Case to Work
- Vue.component('example-component', require('./components/ExampleComponent.vue').default);
- Vue.component('input-label', require('./components/Input.vue').default);
+
+library.add(faBars)
+Vue.component('font-awesome-icon', FontAwesomeIcon)
+
+Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('input-label', require('./components/Input.vue').default);
 
  
  /**
