@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="form">
         <form @submit.prevent="handleSubmit">
             <input-label label_text="Building" :method="update_building" />
             <input-label label_text="Apartment" :method="update_apartment" />
@@ -90,13 +90,17 @@ export default {
 };
 </script>
 <style scoped>
-input-label {
-    margin-bottom: 15px;
-    padding: 10px 100px;
-    text-align: center;
-    text-anchor: none;
-}
-form {
-    display: inline-block;
-}
+  input-label {
+      margin-bottom: 15px;
+      padding: 10px 100px;
+      text-align: center;
+      text-anchor: none;
+  }
+  form {
+      display: inline-block;
+  }
+
+  .form{
+    margin-left: 40px;
+  }
 </style>

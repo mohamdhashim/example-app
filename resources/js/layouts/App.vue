@@ -1,30 +1,20 @@
 <template>
-  <div id="nav">
-    <router-link to="./newaddress">New Address</router-link> |
-    <router-link to="./">AddressTable</router-link>
-    <router-view />
-  </div>
+    <div id="nav">
+        <sidebar />
+        <router-view />
+    </div>
 </template>
 
+<script>
+import sidebar from "../components/SideBar.vue";
+export default {
+    components: { sidebar },
+};
+</script>
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
 #nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+    position: float;
+    margin-left: 50px;
+    padding-left: 100px;
 }
 </style>
