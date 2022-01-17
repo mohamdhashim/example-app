@@ -32,10 +32,10 @@ export default {
         }),
     },
     methods: {
-        ...mapActions(["UpdateData"]),
+        ...mapActions(["updateData"]),
     },
     mounted() {
-        this.UpdateData();
+        this.updateData();
     },
 };
 </script>

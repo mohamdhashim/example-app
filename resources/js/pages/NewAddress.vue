@@ -1,51 +1,68 @@
 <template>
   <div class="form">
     <form @submit.prevent="handleSubmit">
-      <div class="error" v-if="!validField('building')">* required</div>
-      <input-label label_text="Building" :method="updateBuilding" />
+      <input-label
+        labelText="Building"
+        :bindMethod="updateBuilding"
+        fieldName="building"
+        message="* enter a vaild value"
+      />
 
-      <div class="error" v-if="!validField('apartment')">
-        * enter a vaild value
-      </div>
-      <input-label label_text="Apartment" :method="updateApartment" />
+      <input-label
+        labelText="Apartment"
+        :bindMethod="updateApartment"
+        fieldName="apartment"
+        message="* enter a vaild value"
+      />
 
-      <div class="error" v-if="!validField('floor')">
-        * enter a vaild integer in range [-2 : 180]
-      </div>
-      <input-label label_text="Floor" :method="updateFloor" />
+      <input-label
+        labelText="Floor"
+        :bindMethod="updateFloor"
+        fieldName="floor"
+        message="* enter a vaild integer in range [-2 : 180]"
+      />
 
-      <div class="error" v-if="!validField('street')">* enter a vaild name</div>
-      <input-label label_text="Street" :method="updateStreet" />
+      <input-label
+        labelText="Street"
+        :bindMethod="updateStreet"
+        fieldName="street"
+        message="* enter a vaild name"
+      />
 
-      <div class="error" v-if="!validField('email')">* required</div>
-      <div class="error" v-else-if="!validateEmail()">*e-mail isn't valid</div>
-      <input-label label_text="Email" :method="updateEmail" />
+      <input-label
+        labelText="Email"
+        :bindMethod="updateEmail"
+        fieldName="email"
+        message="*e-mail isn't valid"
+      />
 
-      <div class="error" v-if="!validField('area_name')">
-        * enter a vaild name
-      </div>
-      <input-label label_text="Area name" :method="updateAreaName" />
+      <input-label
+        labelText="Area name"
+        :bindMethod="updateAreaName"
+        fieldName="area_name"
+        message="* enter a vaild name"
+      />
 
-      <div v-if="!validField('btton')">
-        <button disabled class="submit">Submit Data</button>
-      </div>
-      <div v-else>
         <button class="submit">Submit Data</button>
-      </div>
-      <div class="message" v-if="message.value== 201">
-          Address submitted successfully
-      </div>
-      <div class="error" v-else-if="message.value==400" style="color:red; font-size :10px;">
-            Faild to submit: please check your data again 
+
+      <div class="message" v-if="message.value == 201">
+        Address submitted successfully
       </div>
 
+      <div
+        class="error"
+        v-else-if="message.value == 400"
+        style="color: red; font-size: 10px"
+      >
+        Faild to submit: please check your data again
+      </div>
     </form>
   </div>
 </template>
 
 <script>
 import { mapMutations, mapState, mapActions, Store } from "vuex";
-
+import Validate from "../validation";
 
 export default {
   name: "NewAddress",
@@ -59,101 +76,67 @@ export default {
       email: "",
     };
   },
-  computed:{
+  computed: {
     ...mapState({
-            message: (state) => state.message,
-        })
+      message: (state) => state.message,
+    }),
   },
   methods: {
     ...mapMutations({
-      EmailMutation: "updateEmail",
-      BuildingMutation: "updateBuilding",
-      StreetMutation: "updateStreet",
-      ApartmentMutation: "updateApartment",
-      AreaNameMutation: "updateAreaName",
-      FloorMutation: "updateFloor",
+      emailMutation: "updateEmail",
+      buildingMutation: "updateBuilding",
+      streetMutation: "updateStreet",
+      apartmentMutation: "updateApartment",
+      areaNameMutation: "updateAreaName",
+      floorMutation: "updateFloor",
+      messageMutation:'messageMutation',
+
     }),
-    ...mapActions(["SumbitData"]),
+    ...mapActions(["submitData"]),
 
     //update methods used to retreive data from child components & update it's States
     updateApartment(valueFromChild) {
-      this.ApartmentMutation(valueFromChild);
+      this.apartmentMutation(valueFromChild);
       this.apartment = valueFromChild;
     },
     updateBuilding(valueFromChild) {
-      this.BuildingMutation(valueFromChild);
+      this.buildingMutation(valueFromChild);
       this.building = valueFromChild;
     },
     updateFloor(valueFromChild) {
-      this.FloorMutation(valueFromChild);
+      this.floorMutation(valueFromChild);
       this.floor = valueFromChild;
     },
     updateStreet(valueFromChild) {
-      this.StreetMutation(valueFromChild);
+      this.streetMutation(valueFromChild);
 
       this.street = valueFromChild;
     },
     updateAreaName(valueFromChild) {
-      this.AreaNameMutation(valueFromChild);
+      this.areaNameMutation(valueFromChild);
       this.area_name = valueFromChild;
     },
     updateEmail(valueFromChild) {
-      this.EmailMutation(valueFromChild);
+      this.emailMutation(valueFromChild);
       this.email = valueFromChild;
     },
 
     handleSubmit() {
-      this.SumbitData();
+      if (
+        !this.validField("building", this.building) ||
+        !this.validField("floor", this.floor) ||
+        !this.validField("apartment", this.apartment) ||
+        !this.validField("street", this.street) ||
+        !this.validField("email", this.email) || 
+        !this.validField('area_name', this.area_name)
+      ){
+        this.messageMutation({value:400})
+      }else
+        this.submitData();
     },
 
-    //input Validation Methods
-    validateEmail() {
-      if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.email)) {
-        return true;
-      } else {
-        return false;
-      }
-    },
-    isNumeric(val) {
-      //to Check if the String is an Integer number or not
-      return /^-?\d+$/.test(val);
-    },
-    isName(val) {
-      //to Check if the String is a vaild Area or Street Name[assumed that ['-', '_' , ',' , '.'] is common used in Street Naming]
-      return /[`!@#$%^&*()+\=\[\]{};':"\\|<>\/?~]/.test(val);
-    },
-
-    validField(name) {
-      if (name == "email" || name == "button")
-        if (this.email == "") return false;
-
-      if (name == "apartment" || name == "button")
-        if (
-          this.apartment < 0 ||
-          this.apartment > 1000 ||
-          this.isName(this.apartment)
-        )
-          return false;
-
-      if (name == "floor" || name == "button")
-        if (
-          (this.floor != "") &
-          (this.floor < -2 || this.floor > 180 || !this.isNumeric(this.floor))
-        )
-          return false;
-
-      if (name == "street" || name == "button")
-        if (this.street == "" || this.isName(this.street)) return false;
-
-      if (name == "area_name" || name == "button")
-        if (this.area_name == "" || this.isName(this.area_name)) return false;
-
-      if (name == "building" || name == "button")
-        if (this.building == "") return false;
-
-      if ((name == "button") & !this.validateEmail()) return false;
-
-      return true;
+    validField(name,value) {
+      return Validate.validField(name,value);
     },
   },
 };

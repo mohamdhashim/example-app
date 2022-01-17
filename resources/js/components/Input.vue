@@ -1,11 +1,16 @@
 <template>
     <div>
-        <label>{{ label_text }}</label>
-        <input @input="method(text)" v-model="text" />
+        <div class="error" v-if="!validateField(fieldName, text)">
+            {{message}}
+        </div>
+        <label>{{ labelText }}</label>
+        <input @input="bindMethod(text)" v-model="text" />
     </div>
 </template>
 
 <script>
+import Validate from '../validation.js'
+
 export default {
     name: "input-label",
     data() {
@@ -14,12 +19,19 @@ export default {
         };
     },
     props: {
-        label_text: String,
+        labelText: String,
         modelValue: String,
-        method: { type: Function },
+        bindMethod: { type: Function },
+        fieldName: "",
+        message: ""
+    },
+    methods:{
+        validateField(fieldName,value){
+            return Validate.validField(fieldName,value)
+        }
     },
     mounted() {
-        this.method(this.text);
+        this.bindMethod(this.text);
     },
 };
 </script>
@@ -37,5 +49,19 @@ input {
 label {
     color: #585d59;
     width: 130px;
+}
+
+.error {
+  color: red;
+  font-weight: 10px;
+  font-size: 10px;
+  margin-bottom: -5px;
+  border: 1px solid red;
+  width: fit-content;
+  border-radius: 2px 5px;
+  font-size: 7px;
+  background-color: rgba(255, 0, 0, 0.096);
+  padding-left: 1px;
+  padding-right: 1px;
 }
 </style>

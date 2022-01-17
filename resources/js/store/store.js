@@ -14,14 +14,12 @@ export const store = new Vuex.Store({
         area_name: "",
         email: "",
         message: "",
+        button: false,
 
 
     },
     mutations: {
-        off_on(state, b) {
-            state.toggle = b;
-        },
-        SetData(state, { addresses: addresses }) {
+        setData(state, { addresses: addresses }) {
             state.addresses = addresses;
         },
         updateEmail (state, email) {
@@ -49,18 +47,18 @@ export const store = new Vuex.Store({
         }
     },
     actions: {
-        UpdateData({ commit }) {
+        updataData({ commit }) {
             axios
                 .get("http://localhost/api/user_addresses/18")
                 .then((data) =>
                     commit({
-                        type: "SetData",
+                        type: "setData",
                         addresses: data["data"]["addresses"],
                     })
                 )
                 .catch((err) => console.log(err.message));
         },
-        SumbitData({commit}){
+        submitData({commit}){
             var address = {
                 floor: this.state.floor,
                 building: this.state.building,
