@@ -26,7 +26,7 @@
       </div>
       <input-label label_text="Area name" :method="updateAreaName" />
 
-      <div v-if="!validField('btton')">
+      <div v-if="!validField('button')">
         <button disabled class="submit">Submit Data</button>
       </div>
       <div v-else>
