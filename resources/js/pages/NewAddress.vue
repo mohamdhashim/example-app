@@ -3,42 +3,42 @@
     <form @submit.prevent="handleSubmit">
       <input-label
         labelText="Building"
-        :bindMethod="updateBuilding"
+        :getInput="updateBuilding"
         fieldName="building"
         message="* enter a vaild value"
       />
 
       <input-label
         labelText="Apartment"
-        :bindMethod="updateApartment"
+        :getInput="updateApartment"
         fieldName="apartment"
         message="* enter a vaild value"
       />
 
       <input-label
         labelText="Floor"
-        :bindMethod="updateFloor"
+        :getInput="updateFloor"
         fieldName="floor"
         message="* enter a vaild integer in range [-2 : 180]"
       />
 
       <input-label
         labelText="Street"
-        :bindMethod="updateStreet"
+        :getInput="updateStreet"
         fieldName="street"
         message="* enter a vaild name"
       />
 
       <input-label
         labelText="Email"
-        :bindMethod="updateEmail"
+        :getInput="updateEmail"
         fieldName="email"
         message="*e-mail isn't valid"
       />
 
       <input-label
         labelText="Area name"
-        :bindMethod="updateAreaName"
+        :getInput="updateAreaName"
         fieldName="area_name"
         message="* enter a vaild name"
       />

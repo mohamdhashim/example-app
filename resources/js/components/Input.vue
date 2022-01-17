@@ -4,7 +4,7 @@
             {{message}}
         </div>
         <label>{{ labelText }}</label>
-        <input @input="bindMethod(text)" v-model="text" />
+        <input @input="getInput(text)" v-model="text" />
     </div>
 </template>
 
@@ -21,7 +21,7 @@ export default {
     props: {
         labelText: String,
         modelValue: String,
-        bindMethod: { type: Function },
+        getInput: { type: Function },
         fieldName: "",
         message: ""
     },
@@ -31,7 +31,7 @@ export default {
         }
     },
     mounted() {
-        this.bindMethod(this.text);
+        this.getInput(this.text);
     },
 };
 </script>
