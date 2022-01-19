@@ -13,6 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/{any}', function () {
-    return view('layouts.vue');
-})->where('any', '.*');
+// Route::get('/{any}', function () {
+//     return view('layouts.vue');
+// })->where('any', '.*');
+
+Route::get('/',App\Http\Livewire\Welcome::class);
+Route::get('/createaddress',App\Http\Livewire\NewAddress::class);
+
+
+Route::get("/addresses",App\Http\Livewire\AddressTable::class);
