@@ -9,7 +9,19 @@
             <a href="/addresses">
                 <li>AddressTable</li>
             </a>
-            </ul>
+            <li class = 'link'>
+            <form class = "nav" method="POST" action="{{ route('logout') }}">
+                @csrf
+
+                <a href="route('logout')"
+                        onclick="event.preventDefault();
+                                    this.closest('form').submit();">
+                    {{ __('User Log Out') }}
+            </a>
+            </form>
+
+        </li>
+        </ul>
     </aside>
 </div>
 
@@ -26,6 +38,8 @@
         transition: 0.3s ease;
         flex-direction: column;
         height: 100%;
+        padding-left: 50px;
+
     }
 
     .nav_list {
@@ -71,4 +85,5 @@
         top: 8px;
 
     }
+
 </style>

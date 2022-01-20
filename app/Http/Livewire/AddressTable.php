@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 use App\Models\{Address, User, Area};
 use App\Http\Controllers\AddressController;
+use Illuminate\Support\Facades\Auth;
 
 
 class AddressTable extends Component
@@ -13,9 +14,9 @@ class AddressTable extends Component
     public $addresses;
     public $message;
 
-
-    public function getData($user_id)
+    public function getData()
     {
+        $user_id =  Auth::id();
         $addressController = new AddressController;
         $addresses = json_decode($addressController->userAddresses($user_id)->getContent(), true)['addresses'];
         return $addresses;

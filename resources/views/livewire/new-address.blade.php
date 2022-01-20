@@ -15,6 +15,7 @@
         <livewire:input-label labelText="Area name" fieldName="area_name" message="* enter a vaild name" />
 
         <button class="submit">Submit Data</button>
+        {{ $apartment }}
 
         @if ($message == 201)
             <div class="message">
@@ -37,6 +38,7 @@
         border-radius: 7px;
         padding: 10px 10px;
         box-shadow: 1px 2px 5px 4px #e9e7e781;
+        margin-left: 100px; 
     }
 
     .error {

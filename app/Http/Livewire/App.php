@@ -5,9 +5,9 @@ use Livewire\Component;
 
 class App extends Component
 {
-    public $slot = 'main';
+    public $slot;
     public function render()
     {
-        return view('layouts.app');
+        return view('layouts.app')->slot('main');
     }
 }

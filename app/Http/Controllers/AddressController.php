@@ -85,7 +85,10 @@ class AddressController extends Controller
 
 
         if (!isset($area)) {
-            return response()->json(["address" => [], "messages" => ["Area Record not found!"]], 400);
+            $area = Area::Create([
+                'name' => $data['area'],
+                'city_id'=> 40 //Dummy City and Area Designed to be input by admin
+            ]);
         } else if (!isset($user)) {
             return response()->json(["address" => [], "messages" => ["User Record not found!"]], 400);
         }

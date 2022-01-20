@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use App\Http\Controllers\AddressController;
 use Livewire\Component;
+use Illuminate\Support\Facades\Auth;
 
 class NewAddress extends Component
 {
@@ -50,19 +51,17 @@ class NewAddress extends Component
             "street" => $this->street,
             "apartment" => $this->apartment,
             "area" => $this->area_name,
-            "email" => $this->email
+            "email" => Auth::user()->email
         ]);
         $res = $addressController->createAddress($objetoRequest);
-        
-        $response = json_decode( $res->getStatusCode(),true);
-        if ($response >=400){
+        $response = json_decode($res->getStatusCode(), true);
+        if ($response >= 400) {
             $this->message = 400;
-        }else{
+        } else {
             $this->message = 201;
         }
-
     }
-    
+
 
     public function render()
     {
