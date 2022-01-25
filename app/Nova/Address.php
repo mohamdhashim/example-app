@@ -31,7 +31,8 @@ class Address extends Resource
      *
      * @var array
      */
-    public function subtitle(){
+    public function subtitle()
+    {
         return ($this->building . ' ' . $this->street);
     }
     /**
