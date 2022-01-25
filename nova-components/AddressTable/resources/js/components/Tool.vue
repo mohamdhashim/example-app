@@ -1,8 +1,6 @@
 <template>
     <div id="address">
-        <button @click="handleNextPage"> <== </button>
-        {{ pageNum }}
-        <button @click="handlePrePage">==></button>
+        <pagination />
         <button @click="updateData">filter</button>
         <table class="address_table">
             <tr class="head">
@@ -40,19 +38,9 @@ export default {
     },
     methods: {
         ...mapActions('store/',['updateData','getMail']),
-        ...mapMutations('store/',['nextPage','prePage']),
-        handleNextPage(){
-            this.nextPage();
-            this.updateData();
-        },
-        handlePrePage(){
-            this.prePage();
-            this.updateData();
-
-        }
     },
     created() {
-    this.getMail();
+        this.getMail();
         this.updateData();
     },
 };

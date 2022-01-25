@@ -43,7 +43,7 @@
         message="* enter a vaild name"
       />
 
-    <button class="submit">Submit Data</button>
+        <button class="submit">Submit Data</button>
 
       <div class="message" v-if="message.value == 201">
         Address submitted successfully
@@ -51,7 +51,7 @@
 
       <div
         class="error"
-        v-else-if="message.value >= 400"
+        v-else-if="message.value == 400"
         style="color: red; font-size: 10px"
       >
         Faild to submit: please check your data again
@@ -63,7 +63,6 @@
 <script>
 import { mapMutations, mapState, mapActions, Store } from "vuex";
 import Validate from "../validation";
-
 
 export default {
   name: "NewAddress",
@@ -78,12 +77,12 @@ export default {
     };
   },
   computed: {
-    ...mapState('store/',{
+    ...mapState({
       message: (state) => state.message,
     }),
   },
   methods: {
-    ...mapMutations('store/',{
+    ...mapMutations({
       emailMutation: "updateEmail",
       buildingMutation: "updateBuilding",
       streetMutation: "updateStreet",
@@ -93,7 +92,7 @@ export default {
       messageMutation:'messageMutation',
 
     }),
-    ...mapActions('store/',["submitData","getMail"]),
+    ...mapActions(["submitData"]),
 
     //update methods used to retreive data from child components & update it's States
     updateApartment(valueFromChild) {
@@ -131,17 +130,75 @@ export default {
         !this.validField("email", this.email) || 
         !this.validField('area_name', this.area_name)
       ){
-        this.messageMutation({value:400});
+        this.messageMutation({value:400})
       }else
         this.submitData();
     },
 
     validField(name,value) {
       return Validate.validField(name,value);
-    }, 
+    },
   },
-  mounted(){
-    this.getMail();
-  }
 };
 </script>
+<style scoped>
+form {
+  display: inline-block;
+  border: 1px solid rgba(128, 128, 128, 0.335);
+  background-color: rgba(255, 255, 255, 0.541);
+  border-radius: 7px;
+  padding: 10px 10px;
+  box-shadow: 1px 2px 5px 4px #e9e7e781;
+}
+
+.error {
+  color: red;
+  font-weight: 10px;
+  font-size: 10px;
+  margin-bottom: -5px;
+  border: 1px solid red;
+  width: fit-content;
+  border-radius: 2px 5px;
+  font-size: 7px;
+  background-color: rgba(255, 0, 0, 0.096);
+  padding-left: 1px;
+  padding-right: 1px;
+}
+.message {
+  color: green;
+  font-weight: 10px;
+  font-size: 10px;
+  margin-bottom: -5px;
+  border: 1px solid green;
+  width: fit-content;
+  border-radius: 2px 5px;
+  font-size: 10px;
+  background-color: rgba(0, 128, 0, 0.294);
+  padding-left: 1px;
+  padding-right: 1px;
+}
+.form {
+  margin-left: 40px;
+}
+
+.submit {
+  margin-top: 10px;
+  margin-left: 150px;
+  border: 1px solid rgba(128, 128, 128, 0.061);
+  border-radius: 6px;
+  color: white;
+  box-shadow: 1px 1px 5px 1px #d1d1d181;
+  background-color: #4b6587;
+  transition: background-color 0.3s ease;
+}
+.submit:enabled:hover {
+  background-color: #5a7daa;
+  transition: background-color 0.3s ease;
+}
+.submit:disabled {
+  background-color: #8e9aaa80;
+  color: rgb(245, 238, 238);
+  transition: background-color 0.6s ease;
+  transform: scale() 0.6s ease;
+}
+</style>

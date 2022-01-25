@@ -3,10 +3,10 @@ const store = {
 
     state: {
         toggle: true,
-        addresses: ["no", "city"],
-        apartment: "hello",
-        building: "hello",
-        floor: "hello",
+        addresses: ["", ""],
+        apartment: "",
+        building: "",
+        floor: "",
         street: "",
         area_name: "",
         email: "",
@@ -16,7 +16,7 @@ const store = {
         perPage: 25,
         user: { email: "" },
         id: Nova.config.userId,
-        searchArea: [{ 'name': "", 'id': "" }]
+        searchArea: [{ name: "", id: "" }]
     },
     mutations: {
         setData(state, { addresses: addresses }) {
@@ -65,14 +65,13 @@ const store = {
             var filter_encode = JSON.stringify(filter_encode);
             var filter_encode = btoa(filter_encode);
             Nova.request()
-                .get(
-                    "http://localhost/nova-api/addresses?&page=" +
-                        state.pagination +
-                        "&filters=" +
-                        filter_encode+
-                        "&perPage="+
-                        state.perPage
-                )
+                .get("http://localhost/nova-api/addresses", {
+                    params: {
+                        page: state.pagination,
+                        filters: filter_encode,
+                        perPage: state.perPage
+                    }
+                })
                 .then(data => {
                     //resourcs -> "fields" -> for [] => {attribute = value }
                     var result = [];
@@ -94,10 +93,10 @@ const store = {
                 .catch(err => console.log(err.message));
         },
         submitData({ commit, state }) {
-            var area_id = ""
+            var area_id = "";
             var areas = state.searchArea;
-            for(var index in areas){
-                if(areas[index].name==state.area_name){
+            for (var index in areas) {
+                if (areas[index].name == state.area_name) {
                     area_id = areas[index].id;
                     break;
                 }
@@ -153,9 +152,9 @@ const store = {
                 })
                 .catch(err => console.log(err.message));
         },
-        searchArea({ commit, state },text) {
+        searchArea({ commit, state }, text) {
             Nova.request()
-                .get("http://localhost/nova-api/search?search="+text)
+                .get("http://localhost/nova-api/search?search=" + text)
                 .then(data => {
                     //resourcs -> "fields" -> for [] => {attribute = value }
                     var resources = data["data"];

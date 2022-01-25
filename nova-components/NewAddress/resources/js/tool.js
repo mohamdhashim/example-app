@@ -1,6 +1,7 @@
 import store from'./store/store.js';
 
 Nova.booting((Vue, router, Store) => {
+  Vue.component("input-label", require("./components/Input"));
   router.addRoutes([
     {
       name: 'new-address',
