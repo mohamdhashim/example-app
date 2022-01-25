@@ -1,6 +1,6 @@
 <template>
     <div id="address">
-        <pagination />
+        <pagination :nextPage ="handleNextPage" :prePage="handlePrePage" :currPage = pageNum />
         <button @click="updateData">filter</button>
         <table class="address_table">
             <tr class="head">
@@ -38,6 +38,15 @@ export default {
     },
     methods: {
         ...mapActions('store/',['updateData','getMail']),
+        ...mapMutations("store/", ["nextPage", "prePage"]),
+        handleNextPage() {
+            this.nextPage();
+            this.updateData();
+        },
+        handlePrePage() {
+            this.prePage();
+            this.updateData();
+        }
     },
     created() {
         this.getMail();
