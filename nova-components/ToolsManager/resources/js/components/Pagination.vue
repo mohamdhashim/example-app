@@ -16,11 +16,6 @@ export default {
         nextPage: { type: Function },
         prePage: {type: Function},
     },
-    methods: {
 
-    },
-    mounted(){
-
-    }
 };
 </script>

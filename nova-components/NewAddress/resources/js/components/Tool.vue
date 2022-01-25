@@ -62,7 +62,7 @@
 
 <script>
 import { mapMutations, mapState, mapActions, Store } from "vuex";
-import Validate from "../validation";
+import Validate from "../../../../ToolsManager/resources/js/validation";
 
 
 export default {
