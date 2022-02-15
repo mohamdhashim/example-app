@@ -38,7 +38,7 @@
         border-radius: 7px;
         padding: 10px 10px;
         box-shadow: 1px 2px 5px 4px #e9e7e781;
-        margin-left: 100px; 
+        margin-left: 100px;
     }
 
     .error {

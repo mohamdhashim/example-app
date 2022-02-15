@@ -7,7 +7,6 @@ use Livewire\Component;
 
 class InputLabel extends Component
 {
-
     public $labelText;
     public $message;
     public $inputValue;

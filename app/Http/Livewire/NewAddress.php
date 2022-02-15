@@ -8,7 +8,6 @@ use Illuminate\Support\Facades\Auth;
 
 class NewAddress extends Component
 {
-
     protected $listeners = ['getInput'];
     public $message = "heellooo";
     public $building;
@@ -24,7 +23,6 @@ class NewAddress extends Component
 
     public function getInput($value, $fieldName)
     {
-
         if ($fieldName == 'building') {
             $this->building = $value;
         } elseif ($fieldName == 'street') {
@@ -42,7 +40,7 @@ class NewAddress extends Component
 
     public function handleSubmit()
     {
-        $addressController = new AddressController;
+        $addressController = new AddressController();
         $objetoRequest = new \Illuminate\Http\Request();
         $objetoRequest->setMethod('POST');
         $objetoRequest->request->add([

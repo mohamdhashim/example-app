@@ -22,7 +22,7 @@
             <!-- Page Content -->
             <main>
                 {{ $slot }}
-                <div class="app" >   
+                <div class="app" >
                     <livewire:side-bar />
                 </div>
             </main>
@@ -31,7 +31,7 @@
 
 </html>
 
-    
+
 <style>
     .app {
         position: float;

@@ -1,5 +1,5 @@
 export default class Validate {
-    //input Validation Methods
+    // input Validation Methods
     static validateEmail(value) {
         if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value)) {
             return true;
@@ -8,17 +8,17 @@ export default class Validate {
         }
     }
     static isNumeric(val) {
-        //to Check if the String is an Integer number or not
+        // to Check if the String is an Integer number or not
         return /^-?\d+$/.test(val);
     }
 
     static isName(val) {
-        //to Check if the String is a vaild Area or Street Name[assumed that ['-', '_' , ',' , '.'] is common used in Street Naming]
+        // to Check if the String is a vaild Area or Street Name[assumed that ['-',
+        // '_' , ',' , '.'] is common used in Street Naming]
         return /[`!@#$%^&*()+\=\[\]{};':"\\|<>\/?~]/.test(val);
     }
 
     static validField(name, value = "") {
-
         if (name == "apartment" || name == "button")
             if (value < 0 || value > 1000 || this.isName(value)) return false;
 

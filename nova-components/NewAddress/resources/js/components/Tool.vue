@@ -128,7 +128,7 @@ export default {
         !this.validField("floor", this.floor) ||
         !this.validField("apartment", this.apartment) ||
         !this.validField("street", this.street) ||
-        !this.validField("email", this.email) || 
+        !this.validField("email", this.email) ||
         !this.validField('area_name', this.area_name)
       ){
         this.messageMutation({value:400});
@@ -138,7 +138,7 @@ export default {
 
     validField(name,value) {
       return Validate.validField(name,value);
-    }, 
+    },
   },
   mounted(){
     this.getMail();
