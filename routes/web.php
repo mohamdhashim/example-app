@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/{any}', function () {
-    return view('layouts.vue');
-})->where('any', '.*');
+Route::get('/', App\Http\Livewire\App::class)->middleware(['auth'])->name('app');
+
+Route::get('/createaddress', App\Http\Livewire\NewAddress::class)->middleware(['auth']);
+
+Route::get("/addresses", App\Http\Livewire\AddressTable::class)->middleware(['auth']);
+require __DIR__.'/auth.php';
